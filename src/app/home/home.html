@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>AngularJS $http Rest example</title>
+    <head>
+<body ng-app="station-ui" ng-controller="HomeController">
+<div class="container">
+    <div class="well well-sm" >
+        <h3 class="text-center">Ajouter une pompe</h3>
+    <form ng-submit="submitPompe()">
+        <pre>
+        Numéro: <input type="text" required  ng-model="pompeForm.id"/>
+
+        Index : <input type="text" required pattern="[0-9]*" ng-model="pompeForm.index"/>
+        </pre>
+
+        <input type="submit" class="btn btn-primary center-block" value="Sauvgarder"/>
+        <div class="alert alert-success" ng-if="added===true">
+            <strong></strong> Pompe ajouté avec succes
+        </div>
+    </form>
+    </div>
+    <button ng-click="getAllCuves()" class="btn btn-primary" ng-show="!IsVisibleConnection">Connexion</button>
+    <div class="well well-sm" ng-show="IsVisibleConnection">
+        <h4 class="text-center">Connecter une Pompe à une Cuve</h4>
+
+        Selectionez la pompe:
+        <select class="selectpicker" ng-model="selectedPompe.id" ng-options="item.id as item.id for item in pompes"></select>
+        Selectionez la Cuve :
+        <select  ng-model="selectedCuve.id" ng-options="cuve.id as cuve.id for cuve in cuves"></select>
+        <div>
+            <button ng-click="connecter()" class="btn btn-primary">Connecter</button>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

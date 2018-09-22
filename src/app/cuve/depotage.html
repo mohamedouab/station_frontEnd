@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<html>
+<head>
+    <title>AngularJS $http Rest example</title>
+    <head>
+<body ng-app="station-ui" ng-controller="DepotageController">
+<div class="container">
+    <div class="well well-sm" >
+        <h3 class="text-center">Dépot dans une Cuve</h3>
+        <h4>Selectionnez la Cuve</h4>
+        <pre>
+       Numéro : <select class="selectpicker" ng-model="depot.idCuve" ng-options="cuve.id as cuve.id for cuve in cuves"></select>
+
+       Quantité:  <input type="text" ng-model="depot.quantite" />
+        </pre>
+        <div>
+            <button ng-click="deposer()" class="btn btn-primary">Sauvgarder</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

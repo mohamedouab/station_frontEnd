@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>AngularJS $http Rest example</title>
+    <head>
+<body ng-app="station-ui" ng-controller="HomeController">
+<div class="container">
+    <div class="well well-sm" >
+        <h3 class="text-center">Modifier  L'index d'une pompe</h3>
+        <h4>Selectionnez la pompe</h4>
+        <pre>
+       Numéro : <select class="selectpicker" ng-model="selectedPompe.id" required  ng-options="item.id as item.id for item in pompes"></select>
+
+       Index:  <input type="number" required  ng-model="selectedPompe.index" />
+        </pre>
+        <div>
+            <button type="submit" ng-click="updateIndex()" class="btn btn-primary">Modifier</button>
+        </div>
+    </div>
+
+    <div class="well well-sm" >
+        <h3 class="text-center">Liste des pompes</h3>
+        <table class="table table-bordered" ng-show="IsVisible">
+            <tr style="background-color: #d58512">
+                <th>Pompe</th>
+                <th>Index Actuel</th>
+                <th>Ancien Index</th>
+                <th>date de prelevement</th>
+
+            </tr>
+            <tbody ng-repeat="pompe in pompes">
+            <tr>
+                <td>{{pompe.id}}</td>
+                <td>{{pompe.index}}</td>
+                <td>{{pompe.lastIndex}}</td>
+                <td>{{pompe.lasteUpdate |date: 'dd-MM-yyyy HH:mm'}}</td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

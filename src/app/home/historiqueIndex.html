@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hitorique Pompe</title>
+</head>
+<body>
+<div class="well well-sm" >
+    <h3 class="text-center">Historique des pompes</h3>
+    <table class="table table-bordered" ng-show="IsVisible">
+        <tr style="background-color: #d58512">
+            <th>Numéro de la Pompe</th>
+            <th>Index Actuel</th>
+            <th>Ancien Index</th>
+            <th>date de dernière mise à jour</th>
+
+        </tr>
+        <tbody ng-repeat="pompe in pompes">
+        <tr>
+            <td>{{pompe.id}}</td>
+            <td>{{pompe.index}}</td>
+            <td>{{pompe.lastIndex}}</td>
+            <td>{{pompe.lasteUpdate |date: 'dd-MM-yyyy HH:mm'}}</td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

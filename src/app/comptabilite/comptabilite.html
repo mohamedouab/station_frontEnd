@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="station-ui" ng-controller="ComptabiliteController">
+<div>
+    <h4 class="text-center">Le compte est fait à la base des Index des Pompes</h4>
+
+</div>
+<div class="well well-sm" ng-if="pompesRecette">
+    <h3 class="text-center">Recette</h3>
+    <table class="table table-bordered">
+        <thead>
+        <tr style="background-color: #d58512">
+            <th>Numéro de la pompe</th>
+            <th>Recette</th>
+
+        </tr>
+        </thead>
+        <tbody ng-repeat="pompe in pompesRecette">
+        <tr>
+            <td>{{pompe.id}}</td>
+            <td>{{pompe.recette}}</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr style="background-color: slategrey">
+            <td><b>TOTALE</b></td>
+            <td><b>{{ getTotal() }}</b></td>
+        </tr>
+        </tfoot>
+    </table>
+
+</div>
+</body>
+</html>

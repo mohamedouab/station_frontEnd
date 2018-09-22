@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>cuve</title>
+    <head>
+<body ng-app="station-ui" ng-controller="cuveController">
+
+<!--<a ui-sref="home">Back to home page</a>-->
+<div class="container">
+    <div class="well well-sm">
+        <h2 class="text-center">
+            Ajouter une Cuve
+        </h2>
+        <form ng-submit="submitCuve()" class="form-horizontal">
+		<pre>
+			Numéro :  <input type="text" ng-model="cuveForm.id"/>
+
+			Capacité: <input type="text" ng-model="cuveForm.capacite"/>
+        </pre>
+            <input type="submit" class="btn btn-primary center-block" value="Sauvgarder"/>
+
+
+            <div class="alert alert-success" ng-if="added===true">
+                <strong></strong> Cuve ajouté avec succes
+            </div>
+        </form>
+    </div>
+    <div class="well well-sm" >
+            <h3 class="text-center">Liste des Cuves</h3>
+            <table class="table table-bordered" ng-show="cuves.length >0">
+            <tr style="background-color: #d58512">
+                <th>Numéro</th>
+                <th>Capacité</th>
+                <th>Contenu</th>
+                <th>derniers depot</th>
+            </tr>
+            <tbody ng-repeat="cuve in cuves">
+            <tr>
+                <td>{{cuve.id}}</td>
+                <td>{{cuve.capacite}}</td>
+                <td>{{cuve.contenu}}</td>
+                <td>{{cuve.lastdepot | date: 'dd-MM-yyyy HH:mm'}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>
+</body>
+</html>
